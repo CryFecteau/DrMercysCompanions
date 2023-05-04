@@ -23,6 +23,8 @@ import { ProductStoreComponent } from './pages/product-store/product-store.compo
 import { CartComponent } from './pages/cart/cart.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartService } from './services/cart.service';
+import { CartDisplayComponent } from './pages/product-store/cart-display/cart-display.component';
+import { ProductBoxComponent } from './pages/product-store/product-box/product-box.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CartService } from './services/cart.service';
     HomeComponent,
     ProductStoreComponent,
     CartComponent,
-    NavBarComponent
+    NavBarComponent,
+    CartDisplayComponent,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<button [matMenuTriggerFor]="cartList">I Am Cart
+    <mat-icon [matBadge]="1"></mat-icon>
+</button>
+<!-- cartService.cartItems.length -->
+<mat-menu #cartList="matMenu">
+    <div>
+        <mat-card>
+            <h5>Product Name</h5>
+            <img [src]="'https://placehold.co/50'" />
+        </mat-card>
+        <a routerLink="/cart">View Cart</a>
+    </div>
+</mat-menu>
