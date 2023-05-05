@@ -1,23 +1,27 @@
 <mat-card>
-    <button mat-raised-button color="warn" class="float-right">
+    <button mat-raised-button color="warn" class="float-right" (click)="onClearCart()">
         Clear All
     </button>
     <mat-card>
-        <h5>Product Here</h5>
-        <img [src]="'https://placehold.co/50'" />
-        <div>
-            <button mat-icon-button color="primary">
-                <mat-icon>remove</mat-icon>
-            </button>
-            <span>1</span>
-            <button mat-icon-button color="primary">
-                <mat-icon>add</mat-icon>
-            </button>
-        </div>
-        <div>
-            <button mat-mini-fab color="warn">
-                <mat-icon>close</mat-icon>
-            </button>
+        <div *ngFor="let item of cart.items">
+            <h5>{{item.name}}</h5>
+            <img src={{item.image}} />
+            <p>{{item.price | currency}}</p>
+            <div>
+                <button mat-icon-button color="primary" (click)="onReduceQuantity(item)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+                <span>{{item.quantity}}</span>
+                <button mat-icon-button color="primary" (click)="onAddQuantity(item)">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div>
+                <button mat-mini-fab color="warn">
+                    <mat-icon (click)="onRemoveItem(item)">close</mat-icon>
+                </button>
+            </div>
         </div>
     </mat-card>
+    <span class="float-right">Total: {{getTotal() | currency}}</span>
 </mat-card>

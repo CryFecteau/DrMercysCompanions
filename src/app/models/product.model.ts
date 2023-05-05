@@ -6,4 +6,5 @@ export interface Product {
     image: string; // image of product
     price: number; // price of product
     description: string; // description of product
+    quantity: number; // quantity of product
 };

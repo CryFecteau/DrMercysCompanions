@@ -1,12 +1,16 @@
 <button [matMenuTriggerFor]="cartList">I Am Cart
-    <mat-icon [matBadge]="1"></mat-icon>
+    <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity"></mat-icon>
 </button>
-<!-- cartService.cartItems.length -->
 <mat-menu #cartList="matMenu">
     <div>
         <mat-card>
-            <h5>Product Name</h5>
-            <img [src]="'https://placehold.co/50'" />
+            <div *ngFor="let item of cart.items">
+                <h5>{{item.name}}</h5>
+                <img src={{item.image}} />
+                <p>{{item.price | currency}}</p>
+                <p class="float-right">Total: {{getTotal() | currency}}</p>
+                <p (click)="onRemoveItem(item)">Delete Product</p>
+            </div>
         </mat-card>
         <a routerLink="/cart">View Cart</a>
     </div>
