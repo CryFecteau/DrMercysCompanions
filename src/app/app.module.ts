@@ -25,6 +25,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartService } from './services/cart.service';
 import { CartDisplayComponent } from './pages/product-store/cart-display/cart-display.component';
 import { ProductBoxComponent } from './pages/product-store/product-box/product-box.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,9 @@ import { ProductBoxComponent } from './pages/product-store/product-box/product-b
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

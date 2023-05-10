@@ -1,2 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
+<ul *ngFor="let item of items$ | async">
+    <li>{{ item.name }}</li>
+    <img src="data:image/png;base64, {{ item.image}}">
+</ul>
