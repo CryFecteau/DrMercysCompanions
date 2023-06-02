@@ -1,3 +1,16 @@
-<a routerLink="home">Home</a>
+<!-- <a routerLink="home">Home</a>
 <a routerLink="product-store">Store</a>
-<a routerLink="cart">Cart</a>
+<a routerLink="cart">Cart</a> -->
+<div class="nav-container">
+    <div class="nav-border-box-wrap" [ngClass]=" { 'nav-open': isNavOpen, 'nav-close': !isNavOpen }">
+        <div class="nav-border-box" [ngClass]=" { 'btn-open': isNavOpen} " id="nav-btn" (click)="toggleNav()">Menu</div>
+    </div>
+    <div class="nav-options" [ngClass]=" { 'ops-open': isNavOpen} ">
+        <div class="nav-ops-containter">
+            <a class="nav-item" routerLink="home">Home</a>
+            <a class="nav-item" routerLink="product-store">Store</a>
+            <a class="nav-item" routerLink="cart">Explore</a>
+        </div>
+    </div>
+</div>
+<!-- <span class="nav-line"></span> -->

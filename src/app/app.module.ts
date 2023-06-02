@@ -23,12 +23,20 @@ import { ProductStoreComponent } from './pages/product-store/product-store.compo
 import { CartComponent } from './pages/cart/cart.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CartService } from './services/cart.service';
+import { ApiDataService } from './services/api-data.service';
 import { CartDisplayComponent } from './pages/product-store/cart-display/cart-display.component';
 import { ProductBoxComponent } from './pages/product-store/product-box/product-box.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { HomeBannerComponent } from './pages/home/home-banner/home-banner.component';
+import { HomeBannerBackgroundComponent } from './pages/home/home-banner/home-banner-background/home-banner-background.component';
+import { HomeStoreInfoComponent } from './pages/home/home-store-info/home-store-info.component';
+import { HomeQuizInfoComponent } from './pages/home/home-quiz-info/home-quiz-info.component';
+import { HomeReviewsComponent } from './pages/home/home-reviews/home-reviews.component';
+import { HomeFooterComponent } from './pages/home/home-footer/home-footer.component';
+import { HomeCompanyInfoComponent } from './pages/home/home-company-info/home-company-info.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +46,14 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     CartComponent,
     NavBarComponent,
     CartDisplayComponent,
-    ProductBoxComponent
+    ProductBoxComponent,
+    HomeBannerComponent,
+    HomeBannerBackgroundComponent,
+    HomeStoreInfoComponent,
+    HomeQuizInfoComponent,
+    HomeReviewsComponent,
+    HomeFooterComponent,
+    HomeCompanyInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +76,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [CartService],
+  providers: [CartService, ApiDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

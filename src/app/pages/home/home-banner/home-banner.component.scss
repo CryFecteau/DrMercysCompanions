@@ -1,0 +1,115 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.banner-container {
+    font-family: Orbitron;
+    height: 85%;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.banner-content {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.banner-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+#banner-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    gap: 20%;
+    letter-spacing: -2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    left: 120px;
+
+    span {
+        font-size: 6rem;
+        z-index: 5;
+    }
+
+    p {
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+        position: relative;
+        top: -2px;
+        left: 80px;
+        font-style: italic;
+        font-weight: 500;
+        z-index: 5;
+    }
+}
+
+#banner-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    bottom: 50px;
+    left: 160px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner-btn {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: Orbitron;
+    padding: 10px 45px;
+    border: 3px solid #ffffff00;
+    border-radius: 3px;
+    // clip-path: polygon(20% 7%, 105% 0%, 80% 93%, -1% 99%);
+    cursor: pointer;
+    top: 15px;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#banner-btn:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background-color: #34495e;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#banner-btn:hover {
+    color: #ecf0f1;
+}
+
+#banner-btn:hover:before {
+    top: 0;
+}
+
+.banner-image {
+    flex: 1;
+
+    img {
+        z-index: 5;
+        position: relative;
+        height: 108%;
+        top: -55px;
+        left: 43px;
+    }
+}

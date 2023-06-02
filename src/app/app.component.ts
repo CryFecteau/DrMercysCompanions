@@ -13,10 +13,10 @@ export class AppComponent {
   items$: Observable<any[]> | undefined;
 
   constructor() {
-    const aCollection = collection(this.firestore, '/products');
-    this.items$ = collectionData(aCollection);
-    this.items$.subscribe((data) => {
-      console.log('dd', data);
-    });
+    // const aCollection = collection(this.firestore, '/products');
+    // this.items$ = collectionData(aCollection);
+    // this.items$.subscribe((data) => {
+    //   console.log('dd', data);
+    // });
   }
 }
