@@ -72,6 +72,7 @@ import { HomeCompanyInfoComponent } from './pages/home/home-company-info/home-co
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    MatGridListModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),

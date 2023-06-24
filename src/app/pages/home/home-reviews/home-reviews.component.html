@@ -4,7 +4,7 @@
             <div class="review-details-border" *ngFor="let review of reviewData; let i = index"
                 [ngClass]="{'hide-set': reviewSet.includes(i)}">
                 <div id="review-details">
-                    <span class="product-name">{{review.product}}</span>
+                    <span class="product-name text-glow">{{review.product}}</span>
                     <hr class="review-divider">
                     <span class="rating">
                         <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">

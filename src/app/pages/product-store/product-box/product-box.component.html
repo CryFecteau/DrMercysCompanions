@@ -1,10 +1,20 @@
-<mat-card>
-    <div>
-        <img [src]="'https://placehold.co/200'" />
-    </div>
-    <h5>I Am Product</h5>
-    <div>
-        <span>100$</span>
-    </div>
-    <button (click)="onAddToCart()" mat-raised-button color="primary">Add To Cart</button>
-</mat-card>
+<mat-grid-list cols="3" rowHeight="1:2" [gutterSize]="'25px'" rowHeight="100px" class="product-box-container">
+    <mat-grid-tile *ngFor="let product of [1, 2, 3, 4, 5, 6]" class="product-box-content">
+        <mat-card class="product-box-card">
+            <img class='product-box-img' mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+            <mat-card-header class="product-box-header">
+                <mat-card-title>Product Name</mat-card-title>
+                <mat-card-subtitle>Catagory</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <span>Price: $1000</span>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+                <button mat-button>ADD TO CART</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
