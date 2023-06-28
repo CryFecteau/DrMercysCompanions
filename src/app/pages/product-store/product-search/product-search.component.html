@@ -1,0 +1,37 @@
+<div class="product-search">
+    <div class="search">
+        <div class="search-input input-effect">
+            <input class="effect-20" type="text" placeholder="">
+            <label>Search by Name</label>
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
+        <div class="product-search-btns">
+            <span class="search-btns" [matMenuTriggerFor]="categories">Categories <i
+                    class="fa-solid fa-sort-down btn-icon"></i>
+            </span>
+            <mat-menu id="search-menu" #categories="matMenu">
+                <ul class="menu-items">
+                    <li>All</li>
+                    <li>Workforce</li>
+                    <li>Health and Wellness</li>
+                    <li>Substainable Living</li>
+                    <li>Entertainment</li>
+                    <li>Home Assistance</li>
+                </ul>
+            </mat-menu>
+            <span class="search-btns" [matMenuTriggerFor]="sort">Sort <i
+                    class="fa-solid fa-sort-down btn-icon"></i></span>
+            <mat-menu id="search-menu" #sort="matMenu">
+                <ul class="menu-items">
+                    <li>None</li>
+                    <li>Name</li>
+                    <li>Price</li>
+                    <li>Popular </li>
+                </ul>
+            </mat-menu>
+        </div>
+    </div>
+    <app-cart-display></app-cart-display>
+</div>

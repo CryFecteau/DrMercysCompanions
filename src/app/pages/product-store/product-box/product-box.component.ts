@@ -28,4 +28,16 @@ export class ProductBoxComponent implements OnInit {
     console.log('Add to cart');
     this.addToCart.emit(this.product);
   }
+
+  selectedItem: any;
+
+  openModal(item: any) {
+    this.selectedItem = item;
+  }
+
+  modalClose(isclose: any) {
+    if (isclose) {
+      this.selectedItem = null
+    }
+  }
 }

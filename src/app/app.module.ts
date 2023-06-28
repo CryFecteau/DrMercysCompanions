@@ -37,6 +37,8 @@ import { HomeQuizInfoComponent } from './pages/home/home-quiz-info/home-quiz-inf
 import { HomeReviewsComponent } from './pages/home/home-reviews/home-reviews.component';
 import { HomeFooterComponent } from './pages/home/home-footer/home-footer.component';
 import { HomeCompanyInfoComponent } from './pages/home/home-company-info/home-company-info.component';
+import { ProductSearchComponent } from './pages/product-store/product-search/product-search.component';
+import { DetailsModalComponent } from './components/details-modal/details-modal.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { HomeCompanyInfoComponent } from './pages/home/home-company-info/home-co
     HomeQuizInfoComponent,
     HomeReviewsComponent,
     HomeFooterComponent,
-    HomeCompanyInfoComponent
+    HomeCompanyInfoComponent,
+    ProductSearchComponent,
+    DetailsModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,27 +1,24 @@
-<mat-card>
-    <button mat-raised-button color="warn" class="float-right" (click)="onClearCart()">
-        Clear All
-    </button>
-    <mat-card>
-        <div *ngFor="let item of cart.items">
-            <h5>{{item.name}}</h5>
-            <img src={{item.image}} />
-            <p>{{item.price | currency}}</p>
-            <div>
-                <button mat-icon-button color="primary" (click)="onReduceQuantity(item)">
-                    <mat-icon>remove</mat-icon>
-                </button>
+<div class="cart">
+    <div class="cart-items">
+        <div class="item-box" *ngFor="let item of cart.items">
+            <img class='item-img' src={{item.image}} />
+            <span class="item-name">{{item.name}}</span>
+            <div class="item-quantity">
+                <span class="reduce-item" (click)="onReduceQuantity(item)">
+                    <i class="fa-solid fa-minus"></i>
+                </span>
                 <span>{{item.quantity}}</span>
-                <button mat-icon-button color="primary" (click)="onAddQuantity(item)">
-                    <mat-icon>add</mat-icon>
-                </button>
+                <span class='add-item' (click)="onAddQuantity(item)">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
             </div>
-            <div>
-                <button mat-mini-fab color="warn">
-                    <mat-icon (click)="onRemoveItem(item)">close</mat-icon>
-                </button>
+            <div class="item-total">
+                <span class="total">{{item.price | currency}}</span>
+            </div>
+            <div class="item-details">
+                <span class="item-details-btn">View Details</span>
+                <span class="item-delete-btn" (click)="onRemoveItem(item)"><i class="fa-solid fa-trash-can"></i></span>
             </div>
         </div>
-    </mat-card>
-    <span class="float-right">Total: {{getTotal() | currency}}</span>
-</mat-card>
+    </div>
+</div>

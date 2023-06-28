@@ -15,6 +15,4 @@ export class NavBarComponent implements OnInit {
   toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
   }
-
-
 }

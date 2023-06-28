@@ -1,6 +1,5 @@
 .home-footer-container {
     font-family: Orbitron;
-    // height: fit-content;
     width: 100%;
     position: relative;
     margin: 0 auto;
@@ -11,20 +10,12 @@
 .footer-content {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    width: 100%;
-    // height: 100%;
+    width: fit-content;
+    margin: 0 auto;
     gap: 5rem;
     padding: 3rem;
     justify-content: center;
 }
-
-// .footer-logo {
-//     flex: 25%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-// }
 
 #footer-title {
     display: flex;
@@ -49,20 +40,11 @@
 
 ul.col-list {
     list-style: none;
-    // margin-left: 35px;
 
     li {
-        // width: 50%;
         margin-bottom: 5px;
     }
 }
-
-// .footer-col {
-//     width: 33.3%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-// }
 
 .col-title {
     font-size: 1.5rem;
@@ -89,5 +71,4 @@ ul.col-list {
 
 .footer-col ul li a:hover {
     color: rgb(0, 255, 242);
-    // padding-left: 20px;
 }

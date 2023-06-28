@@ -1,0 +1,64 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.item-box {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    gap: 1rem;
+    background: rgba(251, 0, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(7.1px);
+    -webkit-backdrop-filter: blur(7.1px);
+    border: 1px solid rgb(255, 0, 251);
+}
+
+.item-img {}
+
+.item-name {
+    font-size: 1.5rem;
+}
+
+.item-quantity {
+    display: flex;
+    gap: 1rem;
+}
+
+.item-total {
+    font-size: 1.5rem;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 7px;
+}
+
+.item-details-btn:hover {
+    cursor: pointer;
+    color: rgb(0, 255, 255);
+}
+
+.item-delete-btn:hover {
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.847);
+}
+
+.reduce-item:hover {
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.847);
+}
+
+.add-item:hover {
+    cursor: pointer;
+    color: rgb(0, 255, 255);
+}
