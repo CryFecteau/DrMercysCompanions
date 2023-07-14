@@ -18,4 +18,21 @@ export class HomeCompanyInfoComponent implements OnInit {
     });
   }
 
+  scrollToElement() {
+    const element = document.getElementById('quiz-info-container');
+
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const offsetTop = elementRect.top + window.pageYOffset;
+      const offsetLeft = elementRect.left + window.pageXOffset;
+      const elementCenterX = offsetLeft + element.offsetWidth / 2;
+      const elementCenterY = offsetTop + element.offsetHeight / 2;
+
+      window.scrollTo({
+        top: elementCenterY - window.innerHeight / 2,
+        left: elementCenterX - window.innerWidth / 2,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

@@ -2,23 +2,15 @@
 
 .home-reviews-container {
     font-family: Orbitron;
-    height: 100%;
     width: 90%;
-    position: relative;
-    margin: 0 auto;
-}
-
-.home-reviews-content {
-    height: 80%;
-    position: relative;
+    margin: 2rem auto;
 }
 
 .review-box {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    gap: clamp(1rem, 2vw, 2.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 
 .hide-set {
@@ -26,9 +18,7 @@
 }
 
 .review-details-border {
-    position: relative;
     flex: 1;
-    height: 100%;
     border-top: 5px solid rgb(255, 255, 255);
     border-right: 5px solid rgb(255, 255, 255);
     background:
@@ -43,16 +33,18 @@
         linear-gradient(-135deg, transparent 0 20px, #fff 0) top right;
     -webkit-mask-size: 50.5% 50.5%;
     -webkit-mask-repeat: no-repeat;
-    clip-path: polygon(14% 1%, 155% -1%, 80% 90%, 0% 100%);
+    clip-path: polygon(14% 1%, 100% -1%, 100% 90%, 0% 100%);
     transform: scaleX(-1);
     animation: slideUp 1.5s;
     filter: drop-shadow(0px 0px 10px #ffffffaf);
 }
 
+
 #review-btn {
     color: #fff;
     position: relative;
     width: fit-content;
+    height: fit-content;
     float: right;
     cursor: pointer;
     font-size: 1rem;
@@ -61,7 +53,7 @@
     border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
     transition: all .3s ease-in-out;
-    top: -5rem;
+    bottom: 0;
 
     &:hover {
         border: 2px solid rgb(0, 255, 255);
@@ -90,7 +82,7 @@
     background: linear-gradient(141deg, rgba(0, 255, 243, 0) 5%, rgba(8, 135, 172, 0.45598749753807777) 14%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0) 77%, rgba(0, 0, 0, 0) 100%);
 
     .product-name {
-        font-size: 2rem;
+        font-size: clamp(1.5rem, 2vw, 2rem);
     }
 
     .rating {
@@ -102,6 +94,7 @@
         align-self: end;
         position: relative;
         right: 45px;
+        margin-top: 1rem;
     }
 
     .review {
@@ -142,7 +135,7 @@ hr.review-divider {
     }
 
     100% {
-        clip-path: polygon(14% 1%, 155% -1%, 80% 90%, 0% 100%);
+        clip-path: polygon(14% 1%, 100% -1%, 100% 90%, 0% 100%);
     }
 }
 

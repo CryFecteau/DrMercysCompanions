@@ -19,7 +19,7 @@ export class HomeStoreInfoComponent implements OnInit {
   }
 
   scrollToElement() {
-    const element = document.getElementById('quiz-info-container');
+    const element = document.getElementById('home-company-info-container');
 
     if (element) {
       const elementRect = element.getBoundingClientRect();

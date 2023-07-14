@@ -4,15 +4,18 @@
         <span id="store-info-img">
             <img src="data:image/png;base64,{{cookImg}}" alt="Store Info">
         </span>
-        <span id="store-info">
-            <span id="store-info-text">
+        <div id="store-info">
+            <div id="store-info-text">
                 <span id="info-title">Upgrade Your Living:</span>
                 <span>Welcome Robotic Assistance</span>
                 <span>In Your Home</span>
-            </span>
-            <a id="store-info-button" routerLink="/product-store">Explore Store</a>
-            <span id="store-learn-button" (click)="scrollToElement()">Learn More <i
-                    class="fa-solid fa-chevron-down"></i></span>
-        </span>
+            </div>
+            <div class="store-info-btns">
+                <a id="store-info-button" routerLink="/product-store">Explore Store</a>
+                <span id="store-learn-button" (click)="scrollToElement()">Learn More <i
+                        class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        </div>
     </div>
 </div>
