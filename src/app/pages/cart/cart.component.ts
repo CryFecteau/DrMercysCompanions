@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart, CartItem } from 'src/app/models/cart.model';
 import { CartService } from 'src/app/services/cart.service';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -22,8 +23,13 @@ export class CartComponent implements OnInit {
     return this.cartService.getTotalPrice();
   }
 
+  getTotalItems(): number {
+    return this.cartService.getTotalItems();
+  }
+
   onAddQuantity(item: CartItem): void {
     this.cartService.addToCart(item);
+    console.log(this.cart)
   }
 
   onRemoveItem(item: CartItem): void {
@@ -36,6 +42,18 @@ export class CartComponent implements OnInit {
 
   onClearCart(): void {
     this.cartService.clearCart();
+  }
+
+  selectedItem: any;
+
+  openModal(item: any) {
+    this.selectedItem = item;
+  }
+
+  modalClose(isclose: any) {
+    if (isclose) {
+      this.selectedItem = null
+    }
   }
 
 

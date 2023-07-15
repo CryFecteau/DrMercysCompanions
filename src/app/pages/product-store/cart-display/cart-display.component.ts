@@ -16,7 +16,6 @@ export class CartDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.cartItems.subscribe((_cart) => {
-      console.log('Cart updated:', _cart);
       this.cart = _cart;
       this.itemsQuantity = _cart.items
         .map((item) => item.quantity)
@@ -29,6 +28,7 @@ export class CartDisplayComponent implements OnInit {
   }
 
   onRemoveItem(item: CartItem): void {
+    console.log('clicked', item);
     this.cartService.removeItemFromCart(item);
   }
 

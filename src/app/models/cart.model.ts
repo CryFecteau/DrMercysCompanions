@@ -5,6 +5,7 @@ export interface CartItem {
     image: string; // image of product
     price: number; // price of product
     quantity: number; // quantity of product
+    category: string; // category of product
 };
 
 // interface for the cart array of cart items

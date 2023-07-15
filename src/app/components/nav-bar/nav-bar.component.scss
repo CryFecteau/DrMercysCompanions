@@ -1,7 +1,7 @@
 .nav-container {
     display: flex;
     position: fixed;
-    width: 22%;
+    width: clamp(20rem, 22vw, 25rem);
     right: 10px;
     justify-content: flex-end;
     top: 10px;
@@ -17,19 +17,17 @@
 }
 
 .nav-border-box {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-family: Orbitron;
     padding: 10px 18px;
     border: 3px solid #ffffff;
     border-radius: 3px;
     clip-path: polygon(20% 7%, 105% 0%, 80% 93%, -1% 99%);
     cursor: pointer;
-    // background: black;
 }
 
 
 .nav-border-box:hover {
-    // background: black;
     animation: clipPathAnimation1 .3s ease forwards;
 }
 
@@ -53,7 +51,7 @@
     transition: opacity 1.5s, transform 0.5s;
     font-family: Orbitron;
     position: fixed;
-    width: 25%;
+    width: clamp(20rem, 25vw, 25rem);
     z-index: -5;
 }
 

@@ -29,10 +29,16 @@
     }
 }
 
+.name-header {
+    margin: 0;
+    font-size: 1rem;
+}
+
 .item-name {
     text-align: center;
     font-size: 1.5rem;
     margin: 1rem 0;
+    color: rgb(0, 255, 255);
 }
 
 .cart-display-btn {
@@ -61,7 +67,7 @@
 
 .item-quantity {
     display: flex;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
 .item-price {
@@ -126,4 +132,10 @@
 #total {
     letter-spacing: 0px;
     color: rgb(0, 255, 255);
+}
+
+@media (max-width: 800px) {
+    .cart-display-footer {
+        flex-direction: column;
+    }
 }

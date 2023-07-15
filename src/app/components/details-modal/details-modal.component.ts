@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DetailsModalComponent implements OnInit {
   @Input() itemDetails: any;
+  @Input() isInCart: any;
   @Output() isModalClosed = new EventEmitter<any>();
 
   constructor() { }

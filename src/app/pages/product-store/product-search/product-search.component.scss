@@ -16,12 +16,12 @@
 .search {
     display: flex;
     gap: 1rem;
-    color: white;
+    color: #fff;
 }
 
 input[type="text"] {
     font: 15px/24px 'Muli', sans-serif;
-    color: white;
+    color: #fff;
     width: 100%;
     box-sizing: border-box;
     letter-spacing: 1px;
@@ -179,6 +179,58 @@ input[type="text"] {
 
 ::ng-deep .mat-menu-content {
     background-color: black;
-    border: solid 3px white;
+    border: solid 3px #fff;
     border-radius: 10px;
+}
+
+.search-sm {
+    display: none;
+    border: 2px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid rgb(0, 255, 255);
+        background-color: rgba(0, 221, 255, 0.386);
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+    }
+}
+
+.search-sm-btn {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.color {
+    color: #fff;
+}
+
+.sm-menu-title {
+    color: #fff;
+    font-family: Orbitron;
+    font-size: 1rem;
+    margin: 1rem 0 0;
+}
+
+@media (max-width: 800px) {
+    .product-search {
+        top: 6rem;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .search-sm {
+        display: block;
+    }
+
+    .menu-items {
+        margin: 0;
+    }
+
+    ::ng-deep .mat-menu-content {
+        padding: 1rem;
+    }
 }

@@ -47,7 +47,6 @@ export class ApiDataService {
 
     getReviews(): Observable<any> {
         if (this.reviewData) {
-            console.log('here 2');
             return of(this.reviewData);
         } else {
             const aCollection = collection(this.firestore, '/reviews');

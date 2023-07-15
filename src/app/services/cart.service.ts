@@ -17,8 +17,10 @@ export class CartService {
         const foundItemIdx = cart.items.findIndex((x) => x.id === item.id);
 
         if (foundItemIdx > -1) {
+            console.log('increase');
             cart.items[foundItemIdx].quantity += 1;
         } else {
+            console.log('add');
             cart.items.push(item);
         }
 
@@ -31,8 +33,9 @@ export class CartService {
         // Know Bug: when removing an item with a quanity higher than 1, that item quantity does not reset to 0
         const filteredItems = this.cartItems.getValue().items.filter((x) => x.id !== item.id);
 
-        if (filteredItems.length === 0) {
 
+        console.log('filteredItems', filteredItems);
+        if (filteredItems.length === 0) {
             this.cartItems.next({ items: filteredItems });
             this._snackBar.open('Item has been removed', 'Close', { duration: 3000 });
         }
@@ -41,6 +44,7 @@ export class CartService {
     }
 
     reduceItemQuantity(item: CartItem): void {
+        console.log('reduce');
         let itemForRemoval!: CartItem;
         let filteredItems = this.cartItems.getValue().items.map((x) => {
             if (x.id === item.id) {
@@ -66,6 +70,11 @@ export class CartService {
     getTotalPrice(): number {
         return this.cartItems.getValue().items
             .map((item) => item.price * item.quantity)
+            .reduce((prev, current) => prev + current, 0);
+    }
+
+    getTotalItems(): number {
+        return this.cartItems.getValue().items.map((item) => item.quantity)
             .reduce((prev, current) => prev + current, 0);
     }
 }

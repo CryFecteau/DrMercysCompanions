@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
+import { ApiDataService } from 'src/app/services/api-data.service';
 
 @Component({
   selector: 'app-product-box',
@@ -8,25 +9,30 @@ import { Product } from 'src/app/models/product.model';
 })
 export class ProductBoxComponent implements OnInit {
   @Output() addToCart = new EventEmitter<Product>();
-
-  product: Product = {
-    id: 100,
-    category: 'Test',
-    name: 'Test',
-    image: 'https://placehold.co/200',
-    price: 10,
-    description: 'Test',
-    quantity: 1,
+  productArray: Product[] = [];
+  categoryMap: Record<string, string> = {
+    workforce: 'Workforce',
+    healthWellness: 'Health & Wellness',
+    homeAssistants: 'Home Assistants',
+    entertainment: 'Entertainment',
+    sustainableLiving: 'Sustainable Living',
   };
 
-  constructor() { }
+  constructor(private apiDataService: ApiDataService) { }
 
   ngOnInit(): void {
+    this.apiDataService.getProducts().subscribe((products) => {
+      this.productArray = products;
+      console.log(this.productArray);
+    });
   }
 
-  onAddToCart(): void {
-    console.log('Add to cart');
-    this.addToCart.emit(this.product);
+  getCatergoryName(category: string): string {
+    return this.categoryMap[category] || category;
+  }
+
+  onAddToCart(product: Product): void {
+    this.addToCart.emit(product);
   }
 
   selectedItem: any;

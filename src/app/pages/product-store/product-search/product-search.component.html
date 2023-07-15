@@ -21,7 +21,7 @@
                     <li>Home Assistance</li>
                 </ul>
             </mat-menu>
-            <span class="search-btns" [matMenuTriggerFor]="sort">Sort <i
+            <span class="search-btns" [matMenuTriggerFor]="sort">Sort<i
                     class="fa-solid fa-sort-down btn-icon"></i></span>
             <mat-menu id="search-menu" #sort="matMenu">
                 <ul class="menu-items">
@@ -33,5 +33,32 @@
             </mat-menu>
         </div>
     </div>
+    <div class="search-sm" [matMenuTriggerFor]="smSearch">
+        <span class="search-sm-btn">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+    </div>
+    <mat-menu #smSearch="matMenu">
+        <div class="sm-menu">
+            <p class="sm-menu-title">Categories</p>
+            <ul class="menu-items">
+                <li>All</li>
+                <li>Workforce</li>
+                <li>Health and Wellness</li>
+                <li>Substainable Living</li>
+                <li>Entertainment</li>
+                <li>Home Assistance</li>
+            </ul>
+        </div>
+        <div class="sm-menu">
+            <p class="sm-menu-title">Sort</p>
+            <ul class="menu-items">
+                <li>None</li>
+                <li>Name</li>
+                <li>Price</li>
+                <li>Popular </li>
+            </ul>
+        </div>
+    </mat-menu>
     <app-cart-display></app-cart-display>
 </div>
