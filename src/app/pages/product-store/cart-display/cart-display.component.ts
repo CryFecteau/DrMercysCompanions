@@ -28,7 +28,6 @@ export class CartDisplayComponent implements OnInit {
   }
 
   onRemoveItem(item: CartItem): void {
-    console.log('clicked', item);
     this.cartService.removeItemFromCart(item);
   }
 

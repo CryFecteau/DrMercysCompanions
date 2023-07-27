@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-details-modal',
@@ -9,11 +10,26 @@ export class DetailsModalComponent implements OnInit {
   @Input() itemDetails: any;
   @Input() isInCart: any;
   @Output() isModalClosed = new EventEmitter<any>();
+  categoryMap: Record<string, string> = {
+    workforce: 'Workforce',
+    healthWellness: 'Health & Wellness',
+    homeAssistants: 'Home Assistants',
+    entertainment: 'Entertainment',
+    sustainableLiving: 'Sustainable Living',
+  };
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
 
   ngOnInit(): void {
+  }
+
+  getCatergoryName(category: string): string {
+    return this.categoryMap[category] || category;
+  }
+
+  onAddToCart(): void {
+    this.cartService.addToCart(this.itemDetails);
   }
 
   closeModal() {

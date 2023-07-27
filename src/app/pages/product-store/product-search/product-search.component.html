@@ -1,8 +1,9 @@
 <div class="product-search">
     <div class="search">
         <div class="search-input input-effect">
-            <input class="effect-20" type="text" placeholder="">
-            <label>Search by Name</label>
+            <input class="search-input-el" type="text" placeholder="" [(ngModel)]="searchText"
+                (ngModelChange)="onSearchUpdate()">
+            <label>Search by Model</label>
             <span class="focus-border">
                 <i></i>
             </span>
@@ -13,22 +14,21 @@
             </span>
             <mat-menu id="search-menu" #categories="matMenu">
                 <ul class="menu-items">
-                    <li>All</li>
-                    <li>Workforce</li>
-                    <li>Health and Wellness</li>
-                    <li>Substainable Living</li>
-                    <li>Entertainment</li>
-                    <li>Home Assistance</li>
+                    <li (click)="onFilterChange('all')">All</li>
+                    <li (click)="onFilterChange('workforce')">Workforce</li>
+                    <li (click)="onFilterChange('healthWellness')">Health and Wellness</li>
+                    <li (click)="onFilterChange('sustainableLiving')">Substainable Living</li>
+                    <li (click)="onFilterChange('entertainment')">Entertainment</li>
+                    <li (click)="onFilterChange('homeAssistants')">Home Assistance</li>
                 </ul>
             </mat-menu>
             <span class="search-btns" [matMenuTriggerFor]="sort">Sort<i
                     class="fa-solid fa-sort-down btn-icon"></i></span>
             <mat-menu id="search-menu" #sort="matMenu">
                 <ul class="menu-items">
-                    <li>None</li>
-                    <li>Name</li>
-                    <li>Price</li>
-                    <li>Popular </li>
+                    <li (click)="onSortChange('none')">None</li>
+                    <li (click)="onSortChange('name')">Name</li>
+                    <li (click)="onSortChange('price')">Price</li>
                 </ul>
             </mat-menu>
         </div>

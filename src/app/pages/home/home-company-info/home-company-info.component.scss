@@ -54,10 +54,9 @@
 #company-info-text {
     position: relative;
     left: 25px;
-    // font-size: clamp(1rem, 1.5vw, 2rem);
-    // line-height: clamp(1.5rem, 2vw, 2rem);
+    padding: 1rem;
     font-size: clamp(1rem, 1.3vw, 1.3rem);
-    line-height: 1.5rem;
+    line-height: clamp(1.3rem, 1.5vw, 1.5rem);
     letter-spacing: 1px;
     background: #0000005c;
 }

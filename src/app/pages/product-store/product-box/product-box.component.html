@@ -11,7 +11,7 @@
                 <p class="product-price">{{product.price | currency}}</p>
             </div>
             <div class="product-btns">
-                <span id="details-btn" (click)="openModal('item-sel')">View Details</span>
+                <span id="details-btn" (click)="openModal(product)">View Details</span>
                 <span (click)="onAddToCart(product)">Add To Cart</span>
             </div>
         </div>

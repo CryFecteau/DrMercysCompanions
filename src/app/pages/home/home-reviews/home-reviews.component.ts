@@ -27,7 +27,6 @@ export class HomeReviewsComponent implements OnInit {
 
   toggleReviews() {
     this.showNext = !this.showNext;
-    console.log('showNext', this.showNext);
 
     if (this.showNext) {
       this.reviewSet = [3, 4, 5]

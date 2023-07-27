@@ -12,53 +12,40 @@ export class CartService {
     cartItems = new BehaviorSubject<Cart>({ items: [] });
 
     addToCart(item: CartItem): void {
-        console.log('Adding to cart:', item);
         const cart = this.cartItems.getValue();
         const foundItemIdx = cart.items.findIndex((x) => x.id === item.id);
 
         if (foundItemIdx > -1) {
-            console.log('increase');
             cart.items[foundItemIdx].quantity += 1;
         } else {
-            console.log('add');
             cart.items.push(item);
         }
 
         this.cartItems.next(cart);
         this._snackBar.open('Item added to cart', 'Close', { duration: 3000 });
-        console.log(this.cartItems.getValue());
     }
 
-    removeItemFromCart(item: CartItem): CartItem[] {
-        // Know Bug: when removing an item with a quanity higher than 1, that item quantity does not reset to 0
-        const filteredItems = this.cartItems.getValue().items.filter((x) => x.id !== item.id);
+    removeItemFromCart(item: CartItem): void {
+        const cart = this.cartItems.getValue();
+        const foundItemIdx = cart.items.findIndex((x) => x.id === item.id);
 
+        cart.items[foundItemIdx].quantity = 1;
 
-        console.log('filteredItems', filteredItems);
-        if (filteredItems.length === 0) {
-            this.cartItems.next({ items: filteredItems });
-            this._snackBar.open('Item has been removed', 'Close', { duration: 3000 });
-        }
+        const filteredItems = cart.items.filter((x) => x.id !== item.id);
 
-        return filteredItems;
+        this.cartItems.next({ items: filteredItems });
+        this._snackBar.open('Item has been removed', 'Close', { duration: 3000 });
     }
 
     reduceItemQuantity(item: CartItem): void {
-        console.log('reduce');
-        let itemForRemoval!: CartItem;
-        let filteredItems = this.cartItems.getValue().items.map((x) => {
-            if (x.id === item.id) {
-                x.quantity--;
-                this._snackBar.open('Item quantity reduced', 'Close', { duration: 3000 });
-                if (x.quantity === 0) {
-                    itemForRemoval = x;
-                }
-            }
-            return x;
-        });
+        const cart = this.cartItems.getValue();
+        const foundItemIdx = cart.items.findIndex((x) => x.id === item.id);
 
-        if (itemForRemoval) {
-            filteredItems = this.removeItemFromCart(itemForRemoval);
+        if (cart.items[foundItemIdx].quantity > 1) {
+            cart.items[foundItemIdx].quantity -= 1;
+            this._snackBar.open('Item quantity reduced', 'Close', { duration: 3000 });
+        } else {
+            this.removeItemFromCart(item);
         }
     }
 

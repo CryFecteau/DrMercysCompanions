@@ -2,8 +2,8 @@
     <div class="modal-product" (click)="stopPropagation($event)">
         <div class="modal-product-img">
             <div class="img-container">
-                <div class="main-img">
-                    <img [src]="'https://placehold.co/200'" />
+                <div class="main-img" [class]="itemDetails.category + '-border'">
+                    <img src="data:image/png;base64,{{itemDetails.image}}" alt="product image" />
                 </div>
             </div>
         </div>
@@ -14,34 +14,26 @@
                 </span>
             </div>
             <div class="modal-header">
-                <span class="modal-title">Name Here</span>
-                <span class="modal-subtitle">Categorgy</span>
-            </div>
-            <div class="modal-product-price">
-                <span>$99.99</span>
+                <div class="modal-product-info">
+                    <p class="modal-text">Model:</p>
+                    <p class="modal-title">{{itemDetails.name}}</p>
+                    <p class="modal-subtitle">
+                        Catergory: <br />
+                        <span [class]="itemDetails.category + '-text'">{{getCatergoryName(itemDetails.category)}}</span>
+                    </p>
+                </div>
+                <div class="modal-product-price">
+                    <p>{{itemDetails.price | currency}}</p>
+                </div>
             </div>
             <div class="modal-description">
-                <span class="modal-subtitle">Description</span>
-                <span class="description">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium harum laudantium
-                    inventore
-                    in aspernatur qui nemo, molestias asperiores, sunt eaque neque quidem doloribus cupiditate
-                    corrupti
-                    minus similique architecto nesciunt. Distinctio!
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium harum laudantium
-                    inventore
-                    in aspernatur qui nemo, molestias asperiores, sunt eaque neque quidem doloribus cupiditate
-                    corrupti
-                    minus similique architecto nesciunt. Distinctio!
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium harum laudantium
-                    inventore
-                    in aspernatur qui nemo, molestias asperiores, sunt eaque neque quidem doloribus cupiditate
-                    corrupti
-                    minus similique architecto nesciunt. Distinctio!
-                </span>
+                <p class="modal-description-title">Description:</p>
+                <p class="description">
+                    {{itemDetails.description}}
+                </p>
             </div>
             <div class="modal-btns" *ngIf='!isInCart'>
-                <span class="modal-add-btn">Add To Cart</span>
+                <span class="modal-add-btn" (click)="onAddToCart()">Add To Cart</span>
             </div>
         </div>
     </div>

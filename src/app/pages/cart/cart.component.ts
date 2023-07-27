@@ -10,13 +10,23 @@ import { Product } from 'src/app/models/product.model';
 })
 export class CartComponent implements OnInit {
   cart: Cart = { items: [] };
+  categoryMap: Record<string, string> = {
+    workforce: 'Workforce',
+    healthWellness: 'Health & Wellness',
+    homeAssistants: 'Home Assistants',
+    entertainment: 'Entertainment',
+    sustainableLiving: 'Sustainable Living',
+  };
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartService.cartItems.subscribe((_cart) => {
-      console.log('Cart updated2:', _cart);
       this.cart = _cart;
     });
+  }
+
+  getCatergoryName(category: string): string {
+    return this.categoryMap[category] || category;
   }
 
   getTotal(): number {
@@ -29,7 +39,6 @@ export class CartComponent implements OnInit {
 
   onAddQuantity(item: CartItem): void {
     this.cartService.addToCart(item);
-    console.log(this.cart)
   }
 
   onRemoveItem(item: CartItem): void {
@@ -55,6 +64,5 @@ export class CartComponent implements OnInit {
       this.selectedItem = null
     }
   }
-
 
 }

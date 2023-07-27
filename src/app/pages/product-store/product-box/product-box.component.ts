@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
-import { ApiDataService } from 'src/app/services/api-data.service';
+import { CartService } from 'src/app/services/cart.service';
+import { ProductStoreService } from 'src/app/services/product.store.service';
 
 @Component({
   selector: 'app-product-box',
@@ -10,6 +11,7 @@ import { ApiDataService } from 'src/app/services/api-data.service';
 export class ProductBoxComponent implements OnInit {
   @Output() addToCart = new EventEmitter<Product>();
   productArray: Product[] = [];
+  selectedItem: any;
   categoryMap: Record<string, string> = {
     workforce: 'Workforce',
     healthWellness: 'Health & Wellness',
@@ -18,13 +20,12 @@ export class ProductBoxComponent implements OnInit {
     sustainableLiving: 'Sustainable Living',
   };
 
-  constructor(private apiDataService: ApiDataService) { }
+  constructor(private cartService: CartService, private productStoreService: ProductStoreService) { }
 
   ngOnInit(): void {
-    this.apiDataService.getProducts().subscribe((products) => {
+    this.productStoreService.productArray$.subscribe((products) => {
       this.productArray = products;
-      console.log(this.productArray);
-    });
+    })
   }
 
   getCatergoryName(category: string): string {
@@ -32,16 +33,14 @@ export class ProductBoxComponent implements OnInit {
   }
 
   onAddToCart(product: Product): void {
-    this.addToCart.emit(product);
+    this.cartService.addToCart(product);
   }
 
-  selectedItem: any;
-
-  openModal(item: any) {
+  openModal(item: Product): void {
     this.selectedItem = item;
   }
 
-  modalClose(isclose: any) {
+  modalClose(isclose: boolean): void {
     if (isclose) {
       this.selectedItem = null
     }
