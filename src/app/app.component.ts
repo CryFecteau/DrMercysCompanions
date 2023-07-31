@@ -11,6 +11,11 @@ export class AppComponent {
   title = 'DMC';
   firestore: Firestore = inject(Firestore);
   items$: Observable<any[]> | undefined;
+  hasEntered = false;
 
   constructor() { }
+
+  handleEnterSite(data: boolean) {
+    this.hasEntered = data;
+  }
 }

@@ -1,9 +1,5 @@
-<app-nav-bar></app-nav-bar>
-<router-outlet></router-outlet>
-<!-- <ul *ngFor="let item of items$ | async">
-    <li>{{ item.name }}</li>
-    <img src="data:image/png;base64, {{ item.image}}">
-    <p>{{ item.description }}</p>
-    <p>{{ item.price | currency }}</p>
-    <p>{{ item.quantity | currency}}</p>
-</ul> -->
+<app-loading (hasUserEntered)="handleEnterSite($event)" *ngIf="!hasEntered; else showSite"></app-loading>
+<ng-template #showSite>
+    <app-nav-bar></app-nav-bar>
+    <router-outlet></router-outlet>
+</ng-template>

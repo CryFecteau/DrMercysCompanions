@@ -1,0 +1,198 @@
+.loading-card {
+    font-family: Orbitron;
+    background: rgba(8, 135, 172, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgb(13 235 255);
+    color: white;
+    width: 75%;
+    height: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    letter-spacing: 2px;
+}
+
+.message-title {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    line-height: clamp(1.5rem, 2vw, 2.5rem);
+    margin: 0;
+}
+
+.message-subtitle {
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.message-body {
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    line-height: clamp(1rem, 1.3vw, 1.5rem);
+    margin: 2.5rem 0 0 1rem;
+}
+
+
+.loading-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    border: 2px solid rgb(255, 255, 255);
+    color: #fff;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 8rem;
+
+    #loading-btn {
+        display: flex;
+        justify-content: center;
+        $speed: 0.5s;
+        text-decoration: none;
+        color: #fff;
+        opacity: 1;
+        position: relative;
+
+        &:hover {
+            &:after {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+
+            &:before {
+                opacity: 0;
+                transform: translateY(50%) rotateX(90deg);
+            }
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+            opacity: 0;
+            // width: 100%;
+            display: block;
+            transition: $speed;
+            position: absolute;
+            content: attr(data-back);
+            transform: translateY(-50%) rotateX(90deg);
+        }
+
+        &:before {
+            opacity: 1;
+            display: block;
+            transition: $speed;
+            position: relative;
+            content: attr(data-front);
+            transform: translateY(0) rotateX(0);
+        }
+    }
+
+    &:hover {
+        border: 2px solid rgb(0, 255, 255);
+        background-color: rgba(0, 221, 255, 0.386);
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+    }
+}
+
+@keyframes loader_5191 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.loader {
+    position: absolute;
+    bottom: 4.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.square {
+    background: #ddd;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+#sq1 {
+    margin-top: -25px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+}
+
+#sq2 {
+    margin-top: -25px;
+    animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+}
+
+#sq3 {
+    margin-top: -25px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 150ms infinite;
+}
+
+#sq4 {
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 225ms infinite;
+}
+
+#sq5 {
+    animation: loader_5191 675ms ease-in-out 300ms infinite;
+}
+
+#sq6 {
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 375ms infinite;
+}
+
+#sq7 {
+    margin-top: 15px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 450ms infinite;
+}
+
+#sq8 {
+    margin-top: 15px;
+    animation: loader_5191 675ms ease-in-out 525ms infinite;
+}
+
+#sq9 {
+    margin-top: 15px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 600ms infinite;
+}
+
+@media (max-width: 768px) {
+    .message-body {
+        margin-top: 1.5rem;
+    }
+
+    .message-subtitle {
+        margin: .7rem;
+    }
+
+    .loader {
+        left: 80%;
+        bottom: 3.5rem;
+    }
+
+    .loading-button {
+        bottom: 0;
+        left: 80%;
+        width: 6rem;
+    }
+}

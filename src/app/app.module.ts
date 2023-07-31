@@ -40,6 +40,7 @@ import { HomeFooterComponent } from './pages/home/home-footer/home-footer.compon
 import { HomeCompanyInfoComponent } from './pages/home/home-company-info/home-company-info.component';
 import { ProductSearchComponent } from './pages/product-store/product-search/product-search.component';
 import { DetailsModalComponent } from './components/details-modal/details-modal.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { DetailsModalComponent } from './components/details-modal/details-modal.
     HomeFooterComponent,
     HomeCompanyInfoComponent,
     ProductSearchComponent,
-    DetailsModalComponent
+    DetailsModalComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
