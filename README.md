@@ -1,28 +1,42 @@
-# DMC
+# Dr. Mercy's Companions
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Dr. Mercy's Companions is a mock e-commerce site, with a collection of robot companions designed to assist in everyday living.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [About](#about)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Contact](#contact)
 
-## Code scaffolding
+## About
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project showcases Angular, Firebase, and SCSS in creating a functional ecommerce website. It demonstrates how these technologies can be seamlessly integrated to provide a smooth and interactive shopping experience for users.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Interactive particle effect
+- Wide range of robot companions with detailed descriptions
+- Fully functional cart with total cost and the ability to add, update, or remove items
+- New releases for a quiz and updated robots in the near future
 
-## Running unit tests
+## Technologies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular: A powerful and flexible front-end framework for building dynamic web applications.
+- Firebase: A comprehensive back-end platform that provides real-time database, hosting, and authentication services.
+- SCSS: A powerful CSS preprocessor that simplifies and enhances the styling process.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Visit GitHub pages to view demo or run locally on your machine.
 
-## Further help
+To run the project locally on your machine, follow the steps below:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# DrMercysCompanions
+1. Clone the repository to your local environment.
+2. Install the required dependencies using npm or yarn.
+3. Run the development server and open the site in your favorite web browser.
+
+## Contact
+
+Crystal Fecteau, Cry.Fecteau@gmail.com
