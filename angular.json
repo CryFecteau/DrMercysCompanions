@@ -67,8 +67,8 @@
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "5mb",
+                                    "maximumError": "10mb"
                                 }
                             ],
                             "fileReplacements": [
@@ -107,6 +107,9 @@
                     "options": {
                         "browserTarget": "DMC:build"
                     }
+                },
+                "deploy": {
+                    "builder": "angular-cli-ghpages:deploy"
                 }
             }
         }
