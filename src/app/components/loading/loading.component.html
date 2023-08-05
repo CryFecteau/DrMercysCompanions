@@ -18,8 +18,8 @@
         <div class="square" id="sq8"></div>
         <div class="square" id="sq9"></div>
     </div>
-    <div class="loading-button" *ngIf="!isLoading" (click)="enterSite()">
+    <div class="loading-button" *ngIf="!isLoading && !isError" (click)="enterSite()">
         <span routerLink="home" id="loading-btn" data-back="Welcome" data-front="Enter"></span>
     </div>
-    <div *ngIf="isError">Error loading data. Please try again later.</div>
+    <div class='error-msg' *ngIf="isError">Error loading data. Please try again later.</div>
 </div>
